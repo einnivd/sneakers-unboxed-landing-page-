@@ -1,0 +1,148 @@
+/* ============================================================
+   2. INTRO + 3 CARDS (오렌지 섹션)
+   ============================================================ */
+.section-intro{
+  position:relative;
+  background:
+    radial-gradient(ellipse 1100px 800px at 110% 0%, #ff6a2e 0%, var(--orange-deep) 42%, var(--ember-dark) 75%, var(--black) 100%);
+    padding: 80px 0 140px;
+}
+
+.intro-head{
+  max-width:900px;
+  margin-bottom:80px;
+  margin-left: 5%;
+}
+.intro-head .eyebrow{
+  font-family:var(--font-kr);
+  color:var(--white);
+  font-weight:500;
+  font-size: 1.8rem;
+  white-space: nowrap;
+}
+.intro-head h2{
+  margin-top:20px;
+  font-family:var(--font-kr);
+  font-weight:600;
+  font-size:clamp(1.8rem, 3vw, 2.7rem);
+  line-height:1.35;
+  color:var(--orange);
+  white-space: nowrap;
+}
+.intro-head p{
+  margin-top:10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height:1.7;
+  color:var(--white);
+  max-width:640px;
+  white-space: nowrap;
+}
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:32px;
+  margin: 0 5%;
+}
+
+.card{
+  background:var(--cream);
+  border-radius:4px;
+  overflow:hidden;
+  box-shadow:0 30px 60px -24px var(--orange);
+border: 5px solid var(--orange);
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+}
+.card.is-visible{ opacity:1; transform:translateY(0); }
+.card:nth-child(2){ transition-delay:.1s; }
+.card:nth-child(3){ transition-delay:.2s; }
+
+/* TODO: 이미지 경로 — 카드 3개 이미지 (01,02,03) */
+.card__img{
+  width:100%;
+  /* aspect-ratio: 4 / 4.6; */
+  background:linear-gradient(160deg, #24211d, #0c0b0a);
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+/* .card__img::after{
+  content:attr(data-placeholder);
+  position:absolute;
+  inset:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.06em;
+  color:rgba(247,245,240,.35);
+  border:1px dashed rgba(247,245,240,.2);
+  margin:2px;
+} */
+
+.card__plate{
+  padding:18px 20px 22px;
+}
+.card__row{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+}
+.card__num{
+  font-family:var(--font-display);
+  font-size:2.6rem;
+  line-height:1;
+  color:var(--ink);
+}
+.card__fields{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  padding-top:4px;
+}
+.card__field{
+  display:grid;
+  grid-template-columns:78px 1fr;
+  gap:8px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.02em;
+  border-bottom:1px dashed var(--paper-line);
+  padding-bottom:5px;
+}
+.card__field:last-child{ border-bottom:none; }
+.card__field .label{
+  color:rgba(23,19,16,.5);
+  text-transform:uppercase;
+}
+.card__field .value{
+  color:var(--ink);
+  font-weight:500;
+  text-align:right;
+}
+.card__desc{
+  margin-top:14px;
+  padding-top:12px;
+  border-top:1px solid var(--paper-line);
+  font-family:var(--font-kr);
+  font-size:12.5px;
+  line-height:1.6;
+  color:rgba(23,19,16,.65);
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 1080px){
+  .card-grid{ grid-template-columns:1fr; }
+}
+
+@media (max-width: 560px){
+  .card__field{ grid-template-columns:64px 1fr; }
+}

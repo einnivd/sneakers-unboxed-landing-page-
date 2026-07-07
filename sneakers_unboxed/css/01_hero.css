@@ -1,0 +1,157 @@
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding-top:56px;
+  padding-bottom:48px;
+  overflow:hidden;
+}
+
+.hero__top{
+  position:relative;
+  width:100%;
+  align-self:stretch;
+  min-height:820px;
+}
+
+.hero-copy{
+  position:absolute;
+  top:0;
+  left:5%;
+  z-index:2;
+  max-width:900px;
+}
+
+.hero__eyebrow{
+  margin-bottom:22px;
+  font-family:var(--font-kr);
+  font-size: 1.5rem;
+   color:var(--white);
+}
+
+.hero__title{
+  font-family:var(--font-display);
+  font-size:clamp(3.6rem, 8vw, 8rem);
+  font-weight: 300;
+  line-height:.92;
+  letter-spacing:-.01em;
+  color:var(--orange);
+  text-transform:uppercase;
+}
+
+.hero__sub{
+  /* margin-top:18px; */
+  font-family:var(--font-display);
+  font-size:clamp(1.3rem, 3.5vw, 4rem);
+  letter-spacing:.03em;
+  color:var(--white);
+   color: transparent;
+  -webkit-text-stroke: 1px var(--orange);
+}
+
+.hero__meta{
+  margin-top:40px;
+  font-family:var(--font-kr);
+  font-size:20px;
+  line-height:1.85;
+  color:rgba(247,245,240,.75);
+}
+.hero__meta strong{
+  display:block;
+  color:var(--white);
+  font-weight:700;
+  margin-bottom:2px;
+}
+
+.hero-visual{
+  position: absolute;
+    top: -290px;
+    left: 37%;
+    right: -300px;
+    height: calc(100% + 290px);
+    z-index: 1;
+}
+
+/* TODO: 이미지 경로 — 히어로 우측 검은 박스 */
+.hero-visual__box{
+  width:100%;
+  height:100%;
+  background:var(--black);
+  background-size:contain; 
+  background-repeat:no-repeat;
+  background-position:center;
+  border-radius:6px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 40px 90px -30px rgba(0,0,0,.8);
+
+  /* 페이드 폭을 줄여서 박스 이미지가 잘려 보이지 않고 왼쪽 끝만 살짝만 스밈 */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
+  mask-image: linear-gradient(to right, transparent 0%, black 15%);
+}
+
+.hero__bottom{
+  position:relative;
+  z-index:3;              /* .hero-visual(z-index:1)보다 위로 — 겹쳐도 하단 영역이 이미지 위에 보이게 */
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:32px;
+  padding:0 5%;
+  margin-top:-150px;      /* 여백 축소 + 이미지 영역 침범. 숫자 키우면 더 많이 파고듦 */
+}
+
+.hero__logos{
+  display:flex;
+  align-items:flex-end;
+  gap:36px;
+}
+.logo-museum{
+  width: 250px;
+}
+.logo-sejong{
+  width: 250px;
+}
+.hero__bottom .btn{
+  color: var(--white);
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 1080px){
+  .hero__top{
+    min-height:auto;
+  }
+  .hero-copy{
+    position:relative;
+    left:0;
+    top:0;
+    max-width:none;
+  }
+  .hero-visual{
+    position:relative;
+    left:0;
+    right:auto;
+    height:auto;
+    margin-top:40px;
+  }
+  .hero-visual__box{
+    aspect-ratio:5/4.2;
+    background-size:cover;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  .hero__bottom{
+    flex-wrap:wrap;
+    margin-top:24px;   /* 모바일에서는 침범 대신 정상 여백으로 */
+  }
+}
+
+@media (max-width: 560px){
+  .hero{ padding-top:40px; }
+  .hero__meta{ font-size:13.5px; }
+}

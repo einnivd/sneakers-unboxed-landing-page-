@@ -1,0 +1,128 @@
+:root{
+  --black: #0a0908;
+  --black-soft: #141210;
+  --orange: #ff4713;
+  --orange-deep: #b8280a;
+  --ember-dark: #2a0d04;
+  --cream: #f3ede1;
+  --ink: #171310;
+  --paper-line: #d8cfba;
+  --white: #f7f5f0;
+
+  --font-display: 'Anton', sans-serif;
+  --font-kr: 'Noto Sans KR', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; }
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:var(--font-kr);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; text-decoration:none; }
+
+.wrap{
+  max-width:1440px;
+  /* margin:0 auto; */
+  /* padding:0 64px; */
+}
+
+/* ---------- 공통 버튼 ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:16px 30px;
+  background:var(--orange);
+  color:var(--black);
+  font-family:var(--font-kr);
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:0.02em;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  transition:transform .35s cubic-bezier(.22,1,.36,1), background .35s ease;
+  white-space:nowrap;
+}
+.btn:hover{
+  background:var(--white);
+  transform:translateY(-2px);
+}
+.btn::after{
+  content:"→";
+  transition:transform .35s cubic-bezier(.22,1,.36,1);
+}
+.btn:hover::after{ transform:translateX(4px); }
+
+.btn--outline{
+  background:transparent;
+  color:var(--white);
+  border:1.5px solid rgba(247,245,240,.4);
+}
+.btn--outline:hover{
+  background:var(--white);
+  color:var(--black);
+}
+
+.eyebrow{
+  font-family:var(--font-mono);
+  font-size:13px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--orange);
+}
+
+/* ---------- 공통 로고 컴포넌트 (히어로 + 푸터에서 공용) ---------- */
+.logo-museum{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:.06em;
+  line-height:1.5;
+  color:rgba(247,245,240,.7);
+}
+.logo-museum b{
+  display:block;
+  font-family:var(--font-display);
+  font-size:19px;
+  color:var(--white);
+  letter-spacing:.01em;
+}
+
+.logo-divider{
+  width:1px;
+  height:34px;
+  background:rgba(247,245,240,.22);
+}
+
+.logo-sejong{
+  font-family:var(--font-kr);
+  font-weight:700;
+  font-size:15px;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.logo-sejong .bracket{
+  color:var(--orange);
+  font-weight:900;
+}
+
+/* ---------- 공통 반응형 ---------- */
+@media (max-width: 1080px){
+  .wrap{ padding:0 32px; }
+}
+
+@media (max-width: 560px){
+  .wrap{ padding:0 22px; }
+}

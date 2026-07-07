@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SNEAKERS UNBOXED — Studio to Street</title>
+
+<!--
+  ============================================================
+  이미지 교체 안내 (예빈이 직접 넣기로 한 부분)
+  ============================================================
+  1) .hero-visual__box       → 히어로 우측 검은 박스 이미지
+  2) .card__img (01,02,03)   → 두 번째 섹션 3개 이미지
+  3) .display-visual         → 조명 받는 신발 진열 이미지
+  4) .catalog-visual__book   → 접혀있는 카탈로그 이미지
+  5) .catalog-visual__tag    → 우측 태그 이미지
+  6) .sns-icon (4개)         → 푸터 SNS 로고 이미지
+
+  각 요소는 background-image 로 채우도록 되어있어서,
+  CSS에서 url('경로/파일명.jpg') 부분만 채워 넣으면 됩니다.
+  (검색해서 아래 CSS 안 "TODO: 이미지 경로" 주석 찾아서 교체)
+
+  얼리버드 버튼 2개의 href="#" 부분에 실제 예매/랜딩 링크를
+  연결하면 됩니다.
+
+  CSS 파일 구조
+  css/00-base.css            공통 변수·리셋·버튼·로고
+  css/01-hero.css            히어로 섹션
+  css/02-section-intro.css   2번째 섹션 (인트로 + 카드 3개)
+  css/03-section-culture.css 3번째 섹션 (컬처 진열 + 티커 + Ready to Unbox)
+  css/04-footer.css          푸터
+  ============================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/00_main.css">
+<link rel="stylesheet" href="css/01_hero.css">
+<link rel="stylesheet" href="css/02_section.css">
+<link rel="stylesheet" href="css/03_section.css">
+<link rel="stylesheet" href="css/04_footer.css">
+
+</head>
+<body>
+
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <section class="hero">
+    <div class="wrap hero__top">
+      <div class="hero-copy">
+        <p class="eyebrow hero__eyebrow">런던 디자인 뮤지엄 월드투어 전시</p>
+        <h1 class="hero__title">SNEAKERS<br>UNBOXED</h1>
+        <p class="hero__sub">STUDIO TO STREET</p>
+
+        <div class="hero__meta">
+          <strong>세종문화회관</strong>
+          세종미술관 1관, 세종미술관 2관
+          <br>2026.05.31 – 09.01
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-visual__box" aria-label="박스 패키지 비주얼">
+          <img src="images/hero_box.png" alt="히어로 신발박스">
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap hero__bottom">
+      <div class="hero__logos">
+        <div class="logo-museum">
+          <img src="images/the-design-museum.png" alt="런던디자인뮤지엄 로고">
+        </div>
+        <div class="logo-sejong"><span class="bracket"></span>
+          <img src="images/sejong_logo.png" alt="세종문화회관 로고">
+          <span class="bracket"></span></div>
+      </div>
+      <a href="#" class="btn">얼리버드 혜택 받기</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. INTRO + 3 CARDS
+       ============================================================ -->
+  <section class="section-intro">
+    <div class="wrap">
+      <div class="intro-head">
+        <p class="eyebrow">런던 디자인 뮤지엄의 월드투어 전시 '스니커즈 언박스드'</p>
+        <h2>스니커즈는 어떻게 세계적인 문화 아이콘이 되었을까</h2>
+        <p>단순한 운동화를 넘어, 스니커즈가 스포츠·음악·스트릿 문화의 상징이 되기까지</p>
+      </div>
+
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card__img" data-placeholder="아카이브 스니커즈 이미지">
+            <img src="images/section2_1.png" alt="아카이브 스니커즈 이미지">
+          </div>
+          <div class="card__plate">
+            <div class="card__row">
+              <div class="card__num">01</div>
+              <div class="card__fields">
+                <div class="card__field"><span class="label">Category</span><span class="value">Iconic Archive</span></div>
+                <div class="card__field"><span class="label">Content</span><span class="value">1980 → NOW<br>Evolution of Icons</span></div>
+                <div class="card__field"><span class="label">Focus</span><span class="value">History · Legacy</span></div>
+              </div>
+            </div>
+            <p class="card__desc">문화의 아이콘이 된 대표 스니커즈 아카이브</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__img" data-placeholder="스트릿 컬처 이미지">
+            <img src="images/section2_2.png" alt="스트릿 컬처 이미지">
+          </div>
+          <div class="card__plate">
+            <div class="card__row">
+              <div class="card__num">02</div>
+              <div class="card__fields">
+                <div class="card__field"><span class="label">Category</span><span class="value">Street Culture</span></div>
+                <div class="card__field"><span class="label">Content</span><span class="value">Hip-hop / Basketball<br>Skateboard / Fashion</span></div>
+                <div class="card__field"><span class="label">Focus</span><span class="value">Identity · Community</span></div>
+              </div>
+            </div>
+            <p class="card__desc">거리에서 시작된 스니커즈 문화의 흐름</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__img" data-placeholder="디자인 프로토타입 이미지">
+            <img src="images/section2_3.png" alt="디자인 프로토타입 이미지">
+          </div>
+          <div class="card__plate">
+            <div class="card__row">
+              <div class="card__num">03</div>
+              <div class="card__fields">
+                <div class="card__field"><span class="label">Category</span><span class="value">Design Archive</span></div>
+                <div class="card__field"><span class="label">Content</span><span class="value">Prototype / Material<br>Innovation / Sole</span></div>
+                <div class="card__field"><span class="label">Focus</span><span class="value">Craft · Technology</span></div>
+              </div>
+            </div>
+            <p class="card__desc">디자인과 기술이 만든 스니커즈의 진화</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. SNEAKERS BECOME CULTURE
+       ============================================================ -->
+  <section class="section-culture">
+    <div class="culture-heading">
+      <h2><span>Sneakers</span><span>become</span><span>Culture</span></h2>
+    </div>
+    <div class="display-visual" aria-label="조명 받는 신발 진열 비주얼">
+      <img src="images/shoes_display.jpg" alt="조명 받는 신발 진열 비주얼">
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. TICKER
+       ============================================================ -->
+  <div class="ticker">
+    <div class="ticker__track">
+      <span>Street</span><span class="dot">·</span>
+      <span>Archive</span><span class="dot">·</span>
+      <span>Culture</span><span class="dot">·</span>
+      <span>Innovation</span><span class="dot">·</span>
+      <span>Motion</span><span class="dot">·</span>
+      <span>Street</span><span class="dot">·</span>
+      <span>Archive</span><span class="dot">·</span>
+      <span>Culture</span><span class="dot">·</span>
+      <span>Innovation</span><span class="dot">·</span>
+      <span>Motion</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       5. READY TO UNBOX
+       ============================================================ -->
+  <section class="section-cta">
+    <div class="wrap cta-grid">
+      <div class="cta-copy">
+        <p class="eyebrow">Exhibition</p>
+        <h2>Ready to<br>Unbox?</h2>
+        <p>Step into the culture</p>
+        <a href="#" class="btn">얼리버드 혜택 받기</a>
+      </div>
+
+      <div class="cta-visual">
+        <div class="catalog-visual__book" aria-label="카탈로그 비주얼"></div>
+        <div class="catalog-visual__tag" aria-label="태그 비주얼"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+
+      <div class="footer-info">
+        전시기간&nbsp; 2026.05.31 – 2026.09.01 총 103일, 휴관일 없음<br>
+        전시장소&nbsp; 세종문화회관 세종미술관 1, 2관<br>
+        관람시간&nbsp; 10:00 ~ 19:00 (입장마감 18:00)<br>
+        문의&nbsp;&nbsp;&nbsp;&nbsp; 02-345-6789
+
+        <div class="footer-sns">
+          <a href="#" class="sns-icon" aria-label="Facebook">FB</a>
+          <a href="#" class="sns-icon" aria-label="Instagram">IG</a>
+          <a href="#" class="sns-icon" aria-label="YouTube">YT</a>
+          <a href="#" class="sns-icon" aria-label="Kakao">KK</a>
+        </div>
+      </div>
+
+      <div class="footer-museum">
+        <span class="footer-label">A touring exhibition from<br>the Design Museum, London</span>
+        <div class="logo-museum">the<br><b>DESIGN MUSEUM</b></div>
+        <div class="logo-sejong"><span class="bracket">[</span>세종문화회관<span class="bracket">]</span></div>
+      </div>
+
+      <div class="footer-sponsors">
+        <div class="sponsor-block">
+          <span class="footer-label">주최</span>
+          <div class="sponsor-names"><span>LOTTE <small>DEPARTMENT STORE</small></span></div>
+        </div>
+        <div class="sponsor-block">
+          <span class="footer-label">협찬</span>
+          <div class="sponsor-names">
+            <span>LG</span>
+            <span>NOROO <small>Paint &amp; Coatings</small></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // 스크롤 리빌 애니메이션 (카드 3개)
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>
